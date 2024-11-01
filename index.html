@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة المدرسة</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>نظام إدارة المدرسة</h1>
+            <div id="adminSection">
+                <button id="adminBtn">تسجيل دخول المسؤول</button>
+                <div id="adminLogin" style="display: none;">
+                    <input type="password" id="adminPassword" placeholder="كلمة المرور">
+                    <button id="loginBtn">تسجيل الدخول</button>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <section class="filters">
+                <h2>البحث عن الدروس</h2>
+                <form id="searchForm">
+                    <select id="grade" name="grade" required>
+                        <option value="">اختر الصف</option>
+                        <option value="أولى ثانوي">أولى ثانوي</option>
+                        <option value="ثانية ثانوي">ثانية ثانوي</option>
+                        <option value="ثالثة ثانوي">ثالثة ثانوي</option>
+                    </select>
+                    <select id="subject" name="subject" required>
+                        <option value="">اختر المادة</option>
+                    </select>
+                    <select id="term" name="term" required>
+                        <option value="">اختر الترم</option>
+                        <option value="الأول">الأول</option>
+                        <option value="الثاني">الثاني</option>
+                    </select>
+                    <button type="submit">بحث</button>
+                </form>
+            </section>
+
+            <section id="uploadSection" class="upload-form" style="display: none;">
+                <h2>رفع ملف PDF جديد</h2>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="text" id="title" name="title" placeholder="عنوان الدرس" required>
+                    <select id="uploadGrade" name="grade" required>
+                        <option value="">اختر الصف</option>
+                        <option value="أولى ثانوي">أولى ثانوي</option>
+                        <option value="ثانية ثانوي">ثانية ثانوي</option>
+                        <option value="ثالثة ثانوي">ثالثة ثانوي</option>
+                    </select>
+                    <select id="uploadSubject" name="subject" required>
+                        <option value="">اختر المادة</option>
+                    </select>
+                    <select id="uploadTerm" name="term" required>
+                        <option value="">اختر الترم</option>
+                        <option value="الأول">الأول</option>
+                        <option value="الثاني">الثاني</option>
+                    </select>
+                    <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+                    <button type="submit">رفع الملف</button>
+                </form>
+            </section>
+
+            <section class="results">
+                <h2>نتائج البحث</h2>
+                <div class="table-container">
+                    <table id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>العنوان</th>
+                                <th>الصف</th>
+                                <th>المادة</th>
+                                <th>الترم</th>
+                                <th>الملف</th>
+                                <th>حذف</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
